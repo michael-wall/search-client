@@ -1,0 +1,6 @@
+Bundle-Name: remote-search-client
+Bundle-SymbolicName: com.mw.remote.search.client
+Bundle-Version: 1.0.0
+-fixupmessages: Classes found in the wrong directory: ...;is:=ignore
+Export-Package: \
+	com.mw.remote.search.client
