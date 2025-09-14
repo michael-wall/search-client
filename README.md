@@ -3,7 +3,7 @@
 - I have recreated some simplified examples here using the out of box Liferay indexed Elasticsearch User documents as well as Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
 - This is a ‘proof of concept’ that is being provided ‘as is’ without any support coverage or warranty.
 - It was built and tested using Liferay DXP QR 2025.Q1.0 with JDK 21 at compile time and runtime.
-- It uses Elasticsearch and Elasticsearch Client version 7.17.26 dependencies.
+- It uses Elasticsearch and Elasticsearch Client version **7.17.26** dependencies.
 - **Note that this POC is intended only for use in a local Liferay DXP developer environment that is using the embedded Sidecar Elasticsearch.**
 - **The POC uses deprecated classes to match the original code and is NOT intended to be taken as 'best practice' or a recommendation to follow the patterns included in the sample code.**
 
