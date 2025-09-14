@@ -1,6 +1,6 @@
 ## Introduction ##
 - This repository contains a POC showing the use of Elasticsearch RestHighLevelClient in Liferay DXP 2025.Q1 based on the provided ElasticSearchClientConfiguration, ElasticSearchClientFactory and ElasticSearchClientUtil classes.
-- I have recreated some simplified examples here using the out of box Liferay indexed Elasticsearch User documents as well as Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
+- I have recreated some simplified examples here using the out of box Liferay indexed Elasticsearch User documents and a custom Liferay Object Definition and data, using Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
 - This is a ‘proof of concept’ that is being provided ‘as is’ without any support coverage or warranty.
 - It was built and tested using Liferay DXP QR 2025.Q1.0 with JDK 21 at compile time and runtime.
 - It uses Elasticsearch and Elasticsearch Client version **7.17.26** dependencies.
@@ -37,7 +37,7 @@
 - It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
 
 ## ElasticSearchClientUtil.java nestedObjectAggregation method ##
-- Aggregates across fields of a specific custom Liferay Object using Elasticsearch classes such as AggregationBuilders, Aggregations, Nested and Terms.
+- Aggregates across nested fields of the specified custom Liferay Object using Elasticsearch classes such as AggregationBuilders, Aggregations, Nested and Terms.
 - It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
 
 ## Triggering the sample Elasticsearch client code with Remote Search Client Web widget ##
