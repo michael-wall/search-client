@@ -31,24 +31,39 @@
 ## ElasticSearchClientUtil.java searchUsers method ##
 - Searches for all User Documents with sorting using Elasticsearch classes such as SortBuilders, SortBuilder, SortOrder, ScriptSortBuilder and Script.
 - It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
+- Sample response:
+```
+firstName: Test, lastName: Test, screenName: test, emailAddress: test@liferay.com
+firstName: default-service-account, lastName: default-service-account, screenName: default-service-account, emailAddress: default-service-account@liferay.com
+firstName: user, lastName: 1, screenName: user1, emailAddress: user1@liferay.com
+firstName: Anonymous, lastName: Anonymous, screenName: Anonymous77669965486364_1, emailAddress: Anonymous77669965486364_1@liferay.com
+firstName: user, lastName: 2, screenName: user2, emailAddress: user2@liferay.com
+firstName: user, lastName: 3, screenName: user3, emailAddress: user3@liferay.com
+```
 
 ## ElasticSearchClientUtil.java userAggregations method ##
 - Aggregates across all User Documents using Elasticsearch classes such as AggregationBuilders, Aggregations, Avg, Cardinality, Min and Max.
 - It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
+- Sample response:
+```
+Cardinality: **6**
+Avg: **37084.666666666664**
+Min: **20123**
+Max: **45704**
+```
 
 ## ElasticSearchClientUtil.java nestedObjectAggregation method ##
 - Aggregates across nested fields of the specified custom Liferay Object using Elasticsearch classes such as AggregationBuilders, Aggregations, Nested and Terms.
 - It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
+- Sample response:
+```
+{fieldA={banana=1, orange=1, apple=4, raspberry=1, pear=2, grapefruit=1}, fieldB={banana=5, orange=2, pear=1, peach=1, grape=1}}
+```
 
 ## Triggering the sample Elasticsearch client code with Remote Search Client Web widget ##
 - Visit the Search Client page to trigger the code.
-- The output of the searchUsers method with different sorting arguments is written to the Liferay logs.
+- The output of the searchUsers method sorted by emailAddress ascending is displayed onscreen as well as written to the Liferay logs.
 - The output of the userAggregations method is displayed onscreen as well as written to the Liferay logs.
-- The onscreen userAggregations output should be something like:
-  - Cardinality: **6**
-  - Avg: **37084.666666666664**
-  - Min: **20123**
-  - Max: **45704**
 
 ## Triggering  the sample Elasticsearch client code with custom Gogo Shell commands ##
  - The output of the custom Gogo Shell commands is written to the Liferay logs.
