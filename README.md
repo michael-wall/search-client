@@ -24,6 +24,9 @@
 - Start the Liferay server.
 - Deploy the 3 custom OSGi modules and check the Liferay logs to confirm they deployed successfully.
 - Login and create a new Widget Page (e.g. called 'Search Client') in a Liferay Site and add the Sample > Remote Search Client Web widget.
+- To run the nestedObjectAggregation sample:
+  - Import custom Liferay Objects Definition from the Liferay Objects Admin widget from file objectDefinitionAndData\Object_Definition_NestedTest.json as custom Liferay Object 'NestedTest'.
+  - Import custom Liferay Objects records from http://localhost:8080/o/api?endpoint=http://localhost:8080/o/c/nestedtests/openapi.json using postNestedTestBatch endpoint and the objectDefinitionAndData\Object_Data_NestedTest.json file.
 
 ## ElasticSearchClientUtil.java searchUsers method ##
 - Searches for all User Documents with sorting using Elasticsearch classes such as SortBuilders, SortBuilder, SortOrder, ScriptSortBuilder and Script.
@@ -31,7 +34,11 @@
 
 ## ElasticSearchClientUtil.java userAggregations method ##
 - Aggregates across all User Documents using Elasticsearch classes such as AggregationBuilders, Aggregations, Avg, Cardinality, Min and Max.
-- It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
+- It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
+
+## ElasticSearchClientUtil.java nestedObjectAggregation method ##
+- Aggregates across fields of a specific custom Liferay Object using Elasticsearch classes such as AggregationBuilders, Aggregations, Nested and Terms.
+- It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse.
 
 ## Triggering the sample Elasticsearch client code with Remote Search Client Web widget ##
 - Visit the Search Client page to trigger the code.
@@ -53,3 +60,5 @@
   - **searchTest:searchUsers emailAddress false**
   - **searchTest:searchUsers timestamp true**
   - **searchTest:searchUsers timestamp false**
+- To test nestedObjectAggregations (using the imported custom Liferay Object Definition and data, run command:
+  - **searchTest:nestedObjectAggregation "com.liferay.object.model.ObjectDefinition#L2K5"**
