@@ -13,7 +13,7 @@ import org.osgi.service.component.annotations.Component;
 
 @Component(
 		immediate = true,
-				property = {"osgi.command.scope=searchTest", "osgi.command.function=searchUser", "osgi.command.function=userAggregations"},
+				property = {"osgi.command.scope=searchTest", "osgi.command.function=searchUsers", "osgi.command.function=userAggregations"},
 		service = SearchTest.class)
 public class SearchTest {
 
