@@ -90,11 +90,13 @@ public class ElasticSearchClientUtil{
 
         SearchHits searchHits = searchResponse.getHits();
         
+        _log.info("=== User Search Sort by " + sortField + " Sort Order " + sortOrder + " Output Start ===");
         _log.info("SearchHits count: " + searchHits.getTotalHits().value);
         
         for (SearchHit hit : searchHits.getHits()) {
         	 _log.info(hit.getSourceAsMap().get("emailAddress"));
         }
+        _log.info("=== User Search Sort by " + sortField + " Sort Order " + sortOrder + " Output End ===");
     }    
     
     public static AggregationResponseTO userAggregations(String index) throws IOException {
@@ -138,10 +140,12 @@ public class ElasticSearchClientUtil{
         aggregationResponseTO.setMin((long)min.getValue());
         aggregationResponseTO.setMax((long)max.getValue());
         
+        _log.info("=== User Aggregations Output Start ===");
         _log.info("Avg: " + aggregationResponseTO.getAvg());
         _log.info("Cardinality: " + aggregationResponseTO.getCardinality());
         _log.info("Min: " + aggregationResponseTO.getMin());
         _log.info("Max: " + aggregationResponseTO.getMax());
+        _log.info("=== User Aggregations Output End ===");
         
         return aggregationResponseTO;
     }
