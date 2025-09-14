@@ -1,6 +1,6 @@
 ## Introduction ##
-- This repository contains a POC showing the use of Elasticsearch RestHighLevelClient in Liferay DXP 2025.Q1.
-- I have recreated some simplified examples here using Liferay indexed Elasticsearch documents as well as Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
+- This repository contains a POC showing the use of Elasticsearch RestHighLevelClient in Liferay DXP 2025.Q1 based on the provided ElasticSearchClientConfiguration, ElasticSearchClientFactory and ElasticSearchClientUtil classes.
+- I have recreated some simplified examples here using the out of box Liferay indexed Elasticsearch User documents as well as Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
 - This is a ‘proof of concept’ that is being provided ‘as is’ without any support coverage or warranty.
 - It was built and tested using Liferay DXP QR 2025.Q1.0 with JDK 21 at compile time and runtime.
 - It uses Elasticsearch and Elasticsearch Client version 7.17.26 dependencies.
@@ -24,6 +24,14 @@
 - Start the Liferay server.
 - Deploy the 3 custom OSGi modules and check the Liferay logs to confirm they deployed successfully.
 - Login and create a new Widget Page (e.g. called 'Search Client') in a Liferay Site and add the Sample > Remote Search Client Web widget.
+
+## ElasticSearchClientUtil.java searchUsers method ##
+- Searches for all User Documents with sorting using Elasticsearch classes such as SortBuilders, SortBuilder, SortOrder, ScriptSortBuilder and Script.
+- It also uses standard Elasticsearch classes such as SearchRequest, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
+
+## ElasticSearchClientUtil.java userAggregations method ##
+- Aggregates across all User Documents using Elasticsearch classes such as AggregationBuilders, Aggregations, Avg, Cardinality, Min and Max.
+- It also uses standard Elasticsearch classes such as SearchRequest, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
 
 ## Triggering the sample Elasticsearch client code with Remote Search Client Web widget ##
 - Visit the Search Client page to trigger the code.
