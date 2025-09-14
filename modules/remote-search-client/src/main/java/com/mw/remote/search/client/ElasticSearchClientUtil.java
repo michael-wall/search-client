@@ -7,7 +7,9 @@ import com.mw.remote.search.config.ElasticSearchClientConfiguration;
 import com.mw.remote.search.config.ElasticSearchClientFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.lucene.search.join.ScoreMode;
@@ -63,7 +65,7 @@ public class ElasticSearchClientUtil{
         getClient().close();
     }
     
-    public static void searchUsers(String index, String sortField, boolean sortAscending) throws IOException {
+    public static List<UserResponseTO> searchUsers(String index, String sortField, boolean sortAscending) throws IOException {
 
         SearchRequest searchRequest = new SearchRequest(index);
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
@@ -96,10 +98,23 @@ public class ElasticSearchClientUtil{
         _log.info("=== User Search Sort by " + sortField + " Sort Order " + sortOrder + " Output Start ===");
         _log.info("SearchHits count: " + searchHits.getTotalHits().value);
         
+        List<UserResponseTO> userResponseTOs = new ArrayList<UserResponseTO>();
+        
         for (SearchHit hit : searchHits.getHits()) {
-        	 _log.info(hit.getSourceAsMap().get("emailAddress"));
+        	UserResponseTO userResponseTO = new UserResponseTO();
+        	
+        	userResponseTO.setFirstName((String)hit.getSourceAsMap().get("firstName"));
+        	userResponseTO.setLastName((String)hit.getSourceAsMap().get("lastName"));
+        	userResponseTO.setScreenName((String)hit.getSourceAsMap().get("screenName"));
+        	userResponseTO.setEmailAddress((String)hit.getSourceAsMap().get("emailAddress"));
+        	
+        	 _log.info(userResponseTO.toString());
+        	 
+        	 userResponseTOs.add(userResponseTO);
         }
         _log.info("=== User Search Sort by " + sortField + " Sort Order " + sortOrder + " Output End ===");
+        
+        return userResponseTOs;
     }    
     
     public static AggregationResponseTO userAggregations(String index) throws IOException {
@@ -154,7 +169,7 @@ public class ElasticSearchClientUtil{
         return aggregationResponseTO;
     }
     
-    public static void nestedObjectAggregation(String index, String entryClassName) throws IOException {
+    public static String nestedObjectAggregation(String index, String entryClassName) throws IOException {
     	
     	SearchRequest searchRequest = new SearchRequest(index);
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
@@ -191,8 +206,10 @@ public class ElasticSearchClientUtil{
         }
         
         _log.info("=== Object Nested Aggregation Output Start ===");
-        _log.info(result);
+        _log.info(result.toString());
         _log.info("=== Object Nested Aggregation Output End ===");
+        
+        return result.toString();
     }
     	
 	private static final Log _log = LogFactoryUtil.getLog(ElasticSearchClientUtil.class);    

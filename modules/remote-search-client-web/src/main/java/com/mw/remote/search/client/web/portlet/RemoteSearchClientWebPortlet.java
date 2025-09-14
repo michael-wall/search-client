@@ -6,9 +6,11 @@ import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.mw.remote.search.client.AggregationResponseTO;
 import com.mw.remote.search.client.ElasticSearchClientUtil;
+import com.mw.remote.search.client.UserResponseTO;
 import com.mw.remote.search.client.web.constants.RemoteSearchClientWebPortletKeys;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.portlet.Portlet;
@@ -50,13 +52,15 @@ public class RemoteSearchClientWebPortlet extends MVCPortlet {
 		
 		String elasticsearchIndex = PropsUtil.get("pic.es.elasticsearchIndex");
 		
-		ElasticSearchClientUtil.searchUsers(elasticsearchIndex, "emailAddress", true);
+		List<UserResponseTO> userResponseTOs = ElasticSearchClientUtil.searchUsers(elasticsearchIndex, "emailAddress", true);
 		ElasticSearchClientUtil.searchUsers(elasticsearchIndex, "emailAddress", false);
 		ElasticSearchClientUtil.searchUsers(elasticsearchIndex, "timestamp", true);
 		ElasticSearchClientUtil.searchUsers(elasticsearchIndex, "timestamp", false);
 		AggregationResponseTO aggregationResponseTO = ElasticSearchClientUtil.userAggregations(elasticsearchIndex);
 		
-		renderRequest.setAttribute("aggregationResponseTO", aggregationResponseTO);
+		renderRequest.setAttribute("userResponseTOs", userResponseTOs);
+		
+		renderRequest.setAttribute("aggregationResponseTO", aggregationResponseTO);		
 
 		super.doView(renderRequest, renderResponse);
 		

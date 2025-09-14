@@ -6,5 +6,7 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 
 <%@ page import="com.mw.remote.search.client.AggregationResponseTO" %>
+<%@ page import="com.mw.remote.search.client.UserResponseTO" %>
+<%@ page import="java.util.List" %>
 
 <portlet:defineObjects />
