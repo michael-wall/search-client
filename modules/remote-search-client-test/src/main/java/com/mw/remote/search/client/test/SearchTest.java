@@ -13,7 +13,7 @@ import org.osgi.service.component.annotations.Component;
 
 @Component(
 		immediate = true,
-				property = {"osgi.command.scope=searchTest", "osgi.command.function=searchUsers", "osgi.command.function=userAggregations"},
+				property = {"osgi.command.scope=searchTest", "osgi.command.function=searchUsers", "osgi.command.function=userAggregations", "osgi.command.function=nestedObjectAggregation"},
 		service = SearchTest.class)
 public class SearchTest {
 
@@ -49,6 +49,21 @@ public class SearchTest {
 			System.out.print("Error occurred, check the Liferay logs..");
 		}
 	}
+	
+	public void nestedObjectAggregation(String entryClassName) {
+		String elasticsearchIndex = PropsUtil.get("pic.es.elasticsearchIndex");
+		
+		try {
+			ElasticSearchClientUtil.nestedObjectAggregation(elasticsearchIndex, entryClassName);
+			
+			System.out.print("Check the Liferay logs for output.");
+		} catch (IOException e) {
+			_log.error(e);
+			
+			System.out.print("Error occurred, check the Liferay logs..");
+		}
+	}
+		
 	
 	private static final Log _log = LogFactoryUtil.getLog(SearchTest.class);
 }

@@ -1,0 +1,487 @@
+{
+  "actions": {
+    "updateBatch": {
+      "method": "PUT",
+      "href": "http://localhost:8080/o/c/nestedtests/batch"
+    },
+    "create": {
+      "method": "POST",
+      "href": "http://localhost:8080/o/c/nestedtests/"
+    },
+    "createBatch": {
+      "method": "POST",
+      "href": "http://localhost:8080/o/c/nestedtests/batch"
+    },
+    "deleteBatch": {
+      "method": "DELETE",
+      "href": "http://localhost:8080/o/c/nestedtests/batch"
+    }
+  },
+  "facets": [],
+  "items": [
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55546/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55546"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55546"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55546"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55546"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:46:54Z",
+      "dateModified": "2025-09-14T16:48:00Z",
+      "externalReferenceCode": "0524bd66-3115-be31-6495-978aef416d2c",
+      "id": 55546,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "apple",
+      "fieldB": "pear"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55530/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55530"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55530"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55530"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55530"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:13:01Z",
+      "dateModified": "2025-09-14T16:48:14Z",
+      "externalReferenceCode": "45ae44e5-bd6e-d534-7067-1753237bd664",
+      "id": 55530,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "raspberry",
+      "fieldB": "grape"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55550/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55550"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55550"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55550"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55550"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:47:14Z",
+      "dateModified": "2025-09-14T16:47:14Z",
+      "externalReferenceCode": "4e798adb-cc35-b9ff-a45c-52912aeab863",
+      "id": 55550,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "orange",
+      "fieldB": "banana"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55544/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55544"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55544"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55544"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55544"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:30:21Z",
+      "dateModified": "2025-09-14T16:48:25Z",
+      "externalReferenceCode": "4ff72376-4325-3d1d-cf95-030b0777ed8e",
+      "id": 55544,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "apple",
+      "fieldB": "banana"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55552/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55552"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55552"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55552"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55552"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:47:33Z",
+      "dateModified": "2025-09-14T16:49:47Z",
+      "externalReferenceCode": "5c8567da-451a-c827-f3e0-4166bee72d32",
+      "id": 55552,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "apple",
+      "fieldB": "banana"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55548/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55548"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55548"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55548"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55548"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:47:04Z",
+      "dateModified": "2025-09-14T16:47:04Z",
+      "externalReferenceCode": "7d7dc172-0961-3fbc-408b-ed1b83c51dc3",
+      "id": 55548,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "pear",
+      "fieldB": "banana"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55558/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55558"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55558"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55558"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55558"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:48:53Z",
+      "dateModified": "2025-09-14T16:48:53Z",
+      "externalReferenceCode": "8077ee75-6cb9-e6fa-46de-335fcdf7ad00",
+      "id": 55558,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "apple",
+      "fieldB": "orange"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55556/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55556"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55556"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55556"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55556"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:48:43Z",
+      "dateModified": "2025-09-14T16:48:43Z",
+      "externalReferenceCode": "947a5bc8-6202-3472-ed8d-3567fcd5311c",
+      "id": 55556,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "grapefruit",
+      "fieldB": "banana"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55560/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55560"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55560"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55560"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55560"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:49:06Z",
+      "dateModified": "2025-09-14T16:49:06Z",
+      "externalReferenceCode": "b3d6c955-f1b8-e1fe-0b4f-5f5c666ad729",
+      "id": 55560,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "pear",
+      "fieldB": "peach"
+    },
+    {
+      "actions": {
+        "permissions": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55554/permissions"
+        },
+        "get": {
+          "method": "GET",
+          "href": "http://localhost:8080/o/c/nestedtests/55554"
+        },
+        "replace": {
+          "method": "PUT",
+          "href": "http://localhost:8080/o/c/nestedtests/55554"
+        },
+        "update": {
+          "method": "PATCH",
+          "href": "http://localhost:8080/o/c/nestedtests/55554"
+        },
+        "delete": {
+          "method": "DELETE",
+          "href": "http://localhost:8080/o/c/nestedtests/55554"
+        }
+      },
+      "creator": {
+        "additionalName": "",
+        "contentType": "UserAccount",
+        "externalReferenceCode": "0e2223fd-b7ed-398e-f4d7-ec262f69f519",
+        "familyName": "Test",
+        "givenName": "Test",
+        "id": 20123,
+        "name": "Test Test"
+      },
+      "dateCreated": "2025-09-14T16:47:45Z",
+      "dateModified": "2025-09-14T16:47:45Z",
+      "externalReferenceCode": "dc5060f3-9fcf-b1a9-f750-108bca8e6815",
+      "id": 55554,
+      "keywords": [],
+      "status": {
+        "code": 0,
+        "label": "approved",
+        "label_i18n": "Approved"
+      },
+      "taxonomyCategoryBriefs": [],
+      "fieldA": "banana",
+      "fieldB": "orange"
+    }
+  ],
+  "lastPage": 1,
+  "page": 1,
+  "pageSize": 20,
+  "totalCount": 10
+}

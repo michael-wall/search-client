@@ -22,6 +22,8 @@ import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
+import org.elasticsearch.search.aggregations.bucket.nested.Nested;
+import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.metrics.Avg;
 import org.elasticsearch.search.aggregations.metrics.Cardinality;
 import org.elasticsearch.search.aggregations.metrics.Max;
@@ -40,7 +42,6 @@ public class ElasticSearchClientUtil{
     private static synchronized RestHighLevelClient getClient() {
     	
     	_log.info(ScoreMode.Avg);
-    	_log.info(SearchType.DFS_QUERY_THEN_FETCH);
     	
        if (client == null) {
             //The config parameters for the connection (dissemination.properties)
@@ -86,6 +87,8 @@ public class ElasticSearchClientUtil{
         sourceBuilder.query(QueryBuilders.matchQuery("entryClassName", "com.liferay.portal.kernel.model.User"));
 
         searchRequest.source(sourceBuilder);
+        searchRequest.searchType(SearchType.QUERY_THEN_FETCH);
+      
         SearchResponse searchResponse = getClient().search(searchRequest, RequestOptions.DEFAULT);
 
         SearchHits searchHits = searchResponse.getHits();
@@ -123,6 +126,7 @@ public class ElasticSearchClientUtil{
 
         sourceBuilder.size(0);
         searchRequest.source(sourceBuilder);
+        searchRequest.searchType(SearchType.QUERY_THEN_FETCH);
 
         SearchResponse searchResponse = getClient().search(searchRequest, RequestOptions.DEFAULT);
 
@@ -149,6 +153,47 @@ public class ElasticSearchClientUtil{
         
         return aggregationResponseTO;
     }
+    
+    public static void nestedObjectAggregation(String index, String entryClassName) throws IOException {
+    	
+    	SearchRequest searchRequest = new SearchRequest(index);
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        
+		sourceBuilder.aggregation(AggregationBuilders.nested("nested_fields", "nestedFieldArray")
+				.subAggregation(AggregationBuilders.terms("by_fieldName").field("nestedFieldArray.fieldName")
+						.subAggregation(AggregationBuilders.terms("values").field("nestedFieldArray.value_keyword_lowercase"))));
+          
+        sourceBuilder.query(QueryBuilders.matchQuery("entryClassName", entryClassName));
+		
+        sourceBuilder.size(0);        
+        searchRequest.source(sourceBuilder);
+        searchRequest.searchType(SearchType.QUERY_THEN_FETCH);
 
+        SearchResponse searchResponse = getClient().search(searchRequest, RequestOptions.DEFAULT);
+
+        Map<String, Map<String, Long>> result = new HashMap<>();
+
+        Aggregations aggs = searchResponse.getAggregations();
+        
+        Nested nested = aggs.get("nested_fields");
+        Terms byFieldName = nested.getAggregations().get("by_fieldName");
+
+        for (Terms.Bucket fieldBucket : byFieldName.getBuckets()) {     	
+            String key = fieldBucket.getKeyAsString();
+            Map<String, Long> valuesMap = new HashMap<>();
+
+            Terms values = fieldBucket.getAggregations().get("values");
+            for (Terms.Bucket valueBucket : values.getBuckets()) {
+                valuesMap.put(valueBucket.getKeyAsString(), valueBucket.getDocCount());
+            }
+
+            result.put(key, valuesMap);
+        }
+        
+        _log.info("=== Object Nested Aggregation Output Start ===");
+        _log.info(result);
+        _log.info("=== Object Nested Aggregation Output End ===");
+    }
+    	
 	private static final Log _log = LogFactoryUtil.getLog(ElasticSearchClientUtil.class);    
 }
