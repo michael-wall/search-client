@@ -1,0 +1,7 @@
+Bundle-Name: remote-search-client-web
+Bundle-SymbolicName: com.mw.remote.search.client.web
+Bundle-Version: 1.0.0
+Export-Package: remote.search.client.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"
