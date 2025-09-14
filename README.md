@@ -27,11 +27,11 @@
 
 ## ElasticSearchClientUtil.java searchUsers method ##
 - Searches for all User Documents with sorting using Elasticsearch classes such as SortBuilders, SortBuilder, SortOrder, ScriptSortBuilder and Script.
-- It also uses standard Elasticsearch classes such as SearchRequest, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
+- It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
 
 ## ElasticSearchClientUtil.java userAggregations method ##
 - Aggregates across all User Documents using Elasticsearch classes such as AggregationBuilders, Aggregations, Avg, Cardinality, Min and Max.
-- It also uses standard Elasticsearch classes such as SearchRequest, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
+- It also uses standard Elasticsearch classes such as SearchRequest, SearchType, RequestOptions, SearchSourceBuilder, QueryBuilders, SearchResponse, SearchHits and SearchHit.
 
 ## Triggering the sample Elasticsearch client code with Remote Search Client Web widget ##
 - Visit the Search Client page to trigger the code.
