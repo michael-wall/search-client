@@ -1,6 +1,7 @@
 ## Introduction ##
 - This repository contains a POC showing the use of Elasticsearch RestHighLevelClient in Liferay DXP 2025.Q1 based on the provided ElasticSearchClientConfiguration, ElasticSearchClientFactory and ElasticSearchClientUtil classes.
 - I have recreated some simplified examples here using the out of box Liferay indexed Elasticsearch User documents and a custom Liferay Object Definition and data, using Elasticsearch classes such as ScriptSortBuilder and AggregationBuilders to show the code compiling, deploying and running successfully in Liferay DXP 2025.Q1.
+- The POC has all of the classes in remote-search-client-web as splitting ElasticSearchClientUtil and ElasticSearchClientConfiguration, ElasticSearchClientFactory into different modules adds complexity without any benefit if the ElasticSearchClientConfiguration, ElasticSearchClientFactory classes are only used by remote-search-client-web.
 - This is a ‘proof of concept’ that is being provided ‘as is’ without any support coverage or warranty.
 - It was built and tested using Liferay DXP QR 2025.Q1.0 with JDK 21 at compile time and runtime.
 - It uses Elasticsearch and Elasticsearch Client version **7.17.26** dependencies.
@@ -11,9 +12,7 @@
 - While the Liferay server is running go to Control Panel > System > Virtual Instances and note the 'Instance ID' for the current Virtual Instance.
 - Confirm the embedded Sidecar Elasticsearch HTTP REST port. It is typically 9201 i.e. http://localhost:9201
 - Stop the Liferay server.
-- Build the 3 custom OSGi modules:
-  - remote-search-client
-  - remote-search-client-test
+- Build the custom OSGi modules:
   - remote-search-client-web
 - Add the following Portal Properties:
   - pic.es.host=localhost
@@ -22,7 +21,7 @@
   - pic.es.socket.timeout=10000
   - pic.es.elasticsearchIndex=liferay-xxxxxxxxxxx **(where xxxxxxxxxxx is the Instance ID from above)**
 - Start the Liferay server.
-- Deploy the 3 custom OSGi modules and check the Liferay logs to confirm they deployed successfully.
+- Deploy the custom OSGi modules and check the Liferay logs to confirm they deployed successfully.
 - Login and create a new Widget Page (e.g. called 'Search Client') in a Liferay Site and add the Sample > Remote Search Client Web widget.
 - To run the nestedObjectAggregation sample:
   - Import custom Liferay Objects Definition from the Liferay Objects Admin widget from file objectDefinitionAndData\Object_Definition_NestedTest.json as custom Liferay Object 'NestedTest'.
