@@ -1,7 +1,9 @@
 dependencies {
 	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
 	
-	compileOnly project(":modules:remote-search-client")
-
+	// Best to match the Liferay ES Client version - which is 7.17.26 in 2025.Q1.0
+	compileInclude group: "org.elasticsearch", name: "elasticsearch", version: "7.17.26"
+	compileInclude group: "org.elasticsearch.client", name: "elasticsearch-rest-high-level-client", version: "7.17.26"
+	
 	cssBuilder group: "com.liferay", name: "com.liferay.css.builder", version: "3.1.4"
 }

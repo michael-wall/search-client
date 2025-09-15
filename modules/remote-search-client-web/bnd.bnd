@@ -5,3 +5,4 @@ Export-Package: remote.search.client.web.constants
 Provide-Capability:\
 	liferay.language.resources;\
 		resource.bundle.base.name="content.Language"
+-fixupmessages: Classes found in the wrong directory: ...;is:=ignore

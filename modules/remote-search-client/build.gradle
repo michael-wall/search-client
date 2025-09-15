@@ -1,7 +1,0 @@
-dependencies {
-	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
-	
-	// Best to match the Liferay ES Client version - which is 7.17.26 in 2025.Q1.0
-	compileInclude group: "org.elasticsearch", name: "elasticsearch", version: "7.17.26"
-	compileInclude group: "org.elasticsearch.client", name: "elasticsearch-rest-high-level-client", version: "7.17.26"
-}
